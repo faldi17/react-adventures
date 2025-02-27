@@ -8,9 +8,9 @@ function MenuResto() {
     }
 
     const menu = [
-        { nama: 'Nasi Bakar 🍘', harga: 'Rp. 10.000'},
-        { nama: 'Mie Ayam 🍜', harga: 'Rp. 15.000'},
-        { nama: 'Ayam Goreng 🍗', harga: 'Rp. 20.000'},
+        { nama: 'Nasi Bakar 🍘', harga: 'Rp. 10.000' },
+        { nama: 'Mie Ayam 🍜', harga: 'Rp. 15.000' },
+        { nama: 'Ayam Goreng 🍗', harga: 'Rp. 20.000' },
     ]
 
     return (
