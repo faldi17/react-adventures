@@ -8,11 +8,13 @@ function MenuResto() {
         borderRadius: "10px",
     }
 
+    const isMakanan = false;
+
     return (
         // <div className="menu-item">
         <div style={styleMenu}>
             <div><b>Nama Menu: </b> <em>Nasi Bakar 🍘</em></div>
-            <div><b>Harga: </b> <em>Rp. 20.000</em></div>
+            {(isMakanan == true) && (<div>Tipe: Makanan</div>)}
         </div>
     )
 }
