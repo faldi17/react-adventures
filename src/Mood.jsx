@@ -1,4 +1,3 @@
-// eslint-disable-next-line react/prop-types
 function Mood({ hari, mood }) {
     const styleMenuItem = {
         fontSize: "20px",
