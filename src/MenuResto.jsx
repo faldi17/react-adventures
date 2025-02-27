@@ -1,21 +1,31 @@
-// import './MenuResto.css'
-
 function MenuResto() {
-    const styleMenu = {
+    const styleMenuItem = {
         backgroundColor: "#333",
         color: "#fff",
         padding: "10px",
         borderRadius: "10px",
+        marginBottom: "5px",
     }
 
-    const isMakanan = false;
+    const menu = [
+        { nama: 'Nasi Bakar 🍘', harga: 'Rp. 10.000'},
+        { nama: 'Mie Ayam 🍜', harga: 'Rp. 15.000'},
+        { nama: 'Ayam Goreng 🍗', harga: 'Rp. 20.000'},
+    ]
 
     return (
-        // <div className="menu-item">
-        <div style={styleMenu}>
-            <div><b>Nama Menu: </b> <em>Nasi Bakar 🍘</em></div>
-            {(isMakanan == true) && (<div>Tipe: Makanan</div>)}
-        </div>
+        <>
+            {
+                menu.map((item, index) => {
+                    return (
+                        <div style={styleMenuItem} key={index}>
+                            <div><b>Nama Menu: </b> <em>{item.nama}</em></div>
+                            <div><b>Harga: </b> <em>{item.harga}</em></div>
+                        </div>
+                    )
+                })
+            }
+        </>
     )
 }
 
