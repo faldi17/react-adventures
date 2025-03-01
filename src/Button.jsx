@@ -1,11 +1,17 @@
+import { useState } from "react"
+
 function Button() {
+    const [counter, setCounter] = useState(0)
+
+    let newCounter = 0
     function clickHandler() {
-        const nama = prompt('Masukkan nama Anda: ')
-        alert(`Button diklik oleh ${nama}!`)
+        newCounter = counter + 1
+        console.log(`Saya di klik ${newCounter} kali`)
+        setCounter(newCounter)
     }
 
     return (
-        <button onClick={clickHandler}>Klik Saya 😁</button>
+        <button onClick={clickHandler}>Saya di klik {counter} 😁</button>
     )
 }
 
