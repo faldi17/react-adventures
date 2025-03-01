@@ -1,10 +1,9 @@
-import Mood from "./Mood"
+import Button from "./Button"
 
 function App() {
     return (
         <>
-            <Mood hari="Senin" mood="🥱" />
-            <Mood hari="Jumat" mood="😁" />
+            <Button />
         </>
     )
 }
