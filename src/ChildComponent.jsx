@@ -6,6 +6,7 @@ function ChildComponent(props) {
     return (
         <>
             <h3>Channel YouTube {props.name}</h3>
+            <button onClick={props.aksi}>Ganti Nama Channel</button>
         </>
     )
 }
