@@ -1,24 +1,50 @@
-import { useRef } from "react"
+import { createContext, useContext, useState } from "react"
 
-function App() {
-    const message = useRef(null)
-    const displayPesan = useRef(null)
-
-    function clickHandler() {
-        console.log(message.current.value)
-        displayPesan.current.textContent = `Pesan: ${message.current.value}`
-
-        displayPesan.current.style.padding = "5px"
-        displayPesan.current.style.marginTop = "5px"
-        displayPesan.current.style.backgroundColor = "black"
-        displayPesan.current.style.color = "white"
-    }
-
+function Child1() {
+    const data = useContext(Context)
     return (
         <>
-            <div><input type="text" ref={message} placeholder="kirim pesan kamu" /></div>
-            <div><button onClick={clickHandler}>Klik aku 🤗</button></div>
-            <div ref={displayPesan}></div>
+            <div>Child 1: {data.nama}</div>
+            <Child2 />
+        </>
+    )
+}
+function Child2() {
+    const data = useContext(Context)
+    return (
+        <>
+            <div>Child 2: {data.nama}</div>
+            <Child3 />
+        </>
+    )
+    
+}
+function Child3() {
+    const data = useContext(Context)
+
+    function clickHandler() {
+        if (data.nama == "Zulfan") {
+            data.setNama("Silam")
+        } else {
+            data.setNama("Zulfan")
+        }
+    }
+    return (
+        <>
+            Child 3: Halo {data.nama} umur kamu {data.umur} <br />
+            <button onClick={clickHandler}>Ganti Nama</button>
+        </>
+    )
+}
+
+const Context = createContext()
+function App() {
+    const [nama, setNama] = useState("Zulfan")
+    return (
+        <>
+            <Context.Provider value={{ nama, setNama, umur: 22 }}>
+                <Child1 name="Faldi" />
+            </Context.Provider>
         </>
     )
 }
